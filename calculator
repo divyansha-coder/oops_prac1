@@ -1,0 +1,153 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+void calculator(int arr[])
+{
+    
+    int n,op;
+    cout<<"1 for Addition"<<endl<<"2 for divide"<<"3 for mod"<<endl<<"4 for sin"<<endl<<"5 for cosine "<<endl<<" 6 for tan"<< endl <<"7 for exp"<<endl<<" 8 for nth root"<<endl<<"9 for multiplication"<<endl;
+    //while(ch=='y'){}
+    cout<<"enter the operation you want to perform "<<endl;
+    cin>>op;
+    
+    
+        switch (op) {
+        case 1:
+        {
+            int sum = 0;
+            int size = sizeof(arr[n]);
+            for(int i = 0 ;i < size ; i++){
+                sum = sum + arr[i];
+            }
+            
+            cout<<"sum is "<< sum<<endl;
+            break;
+            
+        }
+          
+        case 2:
+        {
+            int a,b;
+            cout<<"which two indices you want to divide"<<endl;
+            cin>>a>>b;
+            cout<<"division is "<< arr[a]/arr[b];
+            
+            break;
+            
+        }
+        case 3:
+        {
+            int a,b;
+            cout<<"which two indices you want to do mod on"<<endl;
+            cin>>a>>b;
+            cout<<"division is "<< arr[a]%arr[b];
+            
+            break;
+            
+        }
+        case 4:
+        {
+            for(int i = 0 ; i<n ; i++){
+                cout<<"The sin of "<< arr[i]<<" is "<<sin(arr[i])<<endl;
+            }
+           
+           
+            break;
+            
+        }
+            case 5:
+            {
+                for(int i = 0 ; i<n ; i++){
+                    cout<<"The cosine of "<< arr[i]<<" is "<<cos(arr[i]);
+                }
+               
+               
+                break;
+                
+            }
+            case 6:
+            {
+                for(int i = 0 ; i<n ; i++){
+                    cout<<"The tan of "<< arr[i]<<" is "<<tan(arr[i]);
+                }
+               
+               
+                break;
+                
+            }
+            case 7:
+            {
+                
+                for(int i = 0 ; i<n ; i++){
+                    cout<<"The exponent of "<< arr[i] <<" is "<<exp(arr[i])<<endl;
+                }
+               
+               
+                break;
+                
+            }
+            case 8:
+            {
+                int num;
+                float c;
+                cout<<" enter the value of n in nth root "<<endl;
+                cin>>num;
+                c=(1.0/num);
+                
+                for(int i = 0 ; i<n ; i++){
+                    cout<<"The nth root of "<< arr[i] << " "  <<" is "<<pow(arr[i],c)<<endl;
+                                                                            }
+                    
+               
+                
+                //cout<< c <<endl;
+               
+               
+                break;
+                
+            }
+            case 9:
+            {
+                int mul = 1;
+                
+                for(int i = 0 ;i < n ; i++){
+                    mul = mul * arr[i];
+                }
+                
+                cout<<"multiplication is "<< mul <<endl;
+                break;
+                
+            }
+            
+                
+           
+            
+        default:
+                cout<<"invalid expression"<<endl;
+            break;
+    }
+}
+int main() {
+   
+    int n , op;
+    char ch = 'y';
+    
+    cout<<"how many numbers you want to input"<<endl;
+    cin>>n;
+    int arr[n];
+    cout<<"enter the values "<<endl;
+    for(int i = 0 ; i < n ; i++){
+        cin>>arr[i];
+    }
+    cout<<endl;
+    while(ch=='y'){
+        calculator(arr);
+        cout<<"do you want to do more operations?"<<endl;
+        cin>>ch;
+    }
+    
+    return 0;
+}
+
+
